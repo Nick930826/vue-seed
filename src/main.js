@@ -3,9 +3,15 @@ import { ElButton, ElInput, ElDatePicker, ElContainer, ElAside, ElHeader, ElMain
 import './style.css'
 import App from './App.vue'
 import router from '@/router'
-
+import requset from '@/utils/axios'
 
 const app = createApp(App)
+// 定义全局变量
+app.config.globalProperties.$get = requset.get
+app.config.globalProperties.$post = requset.post
+app.config.globalProperties.$uploadPost = requset.uploadPost
+app.config.globalProperties.$downloadFile = requset.downloadFile
+
 app
   .use(ElButton)
   .use(ElInput)

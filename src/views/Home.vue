@@ -1,6 +1,10 @@
 
 <script setup>
+import { getCurrentInstance } from 'vue'
 import Page from '@/components/Page.jsx'
+const proxy = getCurrentInstance().proxy
+console.log('proxy', proxy.$http.get)
+console.log('proxy', proxy.$http.post)
 </script>
 
 <template>
