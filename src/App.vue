@@ -34,15 +34,17 @@ import LeftMenu from '@/components/LeftMenu.vue'
         width: 200px;
       }
       .inside-container {
-        background-color: aquamarine;
+        // background-color: aquamarine;
         .custom-header {
-          background-color: tan;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          // background-color: tan;
+          border-bottom: 1px solid #e9e9e9;
         }
         .custom-main {
-          background-color: grey;
-        }
-        .custom-footer {
-          background-color: darkcyan;
+          // background-color: grey;
+          
         }
       }
     }
