@@ -8,10 +8,11 @@
   </el-footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer {
-  flex-shrink: 0;
-  height: 100px;
-  background-color: olive;
+  border-top: 1px solid #e9e9e9;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
 }
 </style>

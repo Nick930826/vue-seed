@@ -4,6 +4,7 @@ import { getCurrentInstance } from 'vue'
 import { storeToRefs } from 'pinia'
 import { mainStore } from '@/store'
 import Page from '@/components/Page.jsx'
+import Footer from '@/components/Footer.vue'
 
 const store = mainStore()
 const { a } = storeToRefs(store)
@@ -40,22 +41,14 @@ const update3 = () => {
         <el-button type="warning" @click="update22">修改方法2-2</el-button>
         <el-button type="danger" @click="update3">修改方法3</el-button>
       </div>
-    </el-main> 
-    <el-footer class="footer">
-      操作底部
-    </el-footer>
+    </el-main>
+    <Footer />
   </Page>
 </template>
 
 <style lang="scss" scoped>
 .content {
   flex: 1;
-  padding: 0 16px;
-}
-.footer {
-  border-top: 1px solid #e9e9e9;
-  display: flex;
-  align-items: center;
   padding: 0 16px;
 }
 </style>
