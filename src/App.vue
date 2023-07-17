@@ -37,7 +37,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
         .custom-header {
           display: flex;
           align-items: center;
-          padding: 10px;
+          padding: 0 16px;
           border-bottom: 1px solid #e9e9e9;
         }
         .custom-main {

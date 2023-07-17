@@ -4,9 +4,20 @@ import vue from '@vitejs/plugin-vue'
 import ElementPlus from 'unplugin-element-plus/vite'
 import Inspect from 'vite-plugin-inspect'
 import vueJsx from "@vitejs/plugin-vue-jsx"
+import config from './src/config'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default ({ mode }) => defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: config[mode].baseUrl,
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      }
+    }
+  },
+  publicPath: mode === 'production' ? '' : '',
   resolve: {
     alias: {
       '@': `${path.resolve(__dirname, 'src')}`,

@@ -1,10 +1,14 @@
 import { createApp } from 'vue'
 import { ElButton, ElInput, ElDatePicker, ElContainer, ElAside, ElHeader, ElMain, ElFooter, ElMenu, ElMenuItem, ElSubMenu, ElIcon, ElMenuItemGroup } from 'element-plus'
-import './style.css'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
 import router from '@/router'
 import requset from '@/utils/axios'
 
+import './style.css'
+
+const pinia = createPinia()
 const app = createApp(App)
 // 定义全局变量
 app.config.globalProperties.$get = requset.get
@@ -28,4 +32,5 @@ app
   .use(ElMenuItemGroup)
 
 app.use(router)
+app.use(pinia)
 app.mount('#app')
