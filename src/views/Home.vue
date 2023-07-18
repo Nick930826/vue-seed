@@ -6,11 +6,9 @@ import { mainStore } from '@/store'
 import Page from '@/components/Page.jsx'
 import Footer from '@/components/Footer.vue'
 
-const store = mainStore()
-const { a } = storeToRefs(store)
-const proxy = getCurrentInstance().proxy
-console.log('proxy', proxy.$get)
-console.log('proxy', proxy.$post)
+const store = mainStore() // 获取全局状态方式一
+const { a } = storeToRefs(store) // 获取全局状态方式二
+const proxy = getCurrentInstance().proxy // 全局对象
 
 const update1 = () => {
   store.a = '修改方法1'
